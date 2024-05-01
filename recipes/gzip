@@ -1,0 +1,4 @@
+#!/bin/bash
+./configure --host="$TRIPLE" --prefix="$PREFIX"
+gmake "-j$JOBS"
+gmake install

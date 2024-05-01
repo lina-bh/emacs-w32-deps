@@ -1,0 +1,6 @@
+build system for cross compiling gnutls and gzip for emacs on windows.
+the objective is to produce the smallest possible emacs in terms of code
+size that can open org files and download packages.
+
+do what the fuck you want with this software but don't ask me for shit. see
+LICENCE.

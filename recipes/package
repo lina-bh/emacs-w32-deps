@@ -1,0 +1,14 @@
+#!/opt/homebrew/bin/bash
+toolchain_stuff='/opt/homebrew/Cellar/mingw-w64/11.0.1_1/toolchain-x86_64/x86_64-w64-mingw32'
+mkdir -p dlls
+cp -v "${PREFIX}/bin/libgnutls-30.dll" \
+   "${PREFIX}/bin/libnettle-8.dll" \
+   "${PREFIX}/bin/libhogweed-6.dll" \
+   "${PREFIX}/bin/gzip.exe" \
+   ${toolchain_stuff}/lib/libgcc_s_seh-1.dll \
+   ${toolchain_stuff}/bin/libwinpthread-1.dll \
+   dlls
+cd dlls || exit 1
+for dll in ./*.dll ./*.exe; do
+  "${TRIPLE}-strip" -v -s "$dll"
+done ||:

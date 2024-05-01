@@ -1,0 +1,4 @@
+nettle https://ftp.gnu.org/gnu/nettle/nettle-3.9.1.tar.gz bin/libhogweed-6.dll
+gnutls https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.5.tar.xz bin/libgnutls-30.dll nettle
+gzip https://ftp.gnu.org/gnu/gzip/gzip-1.13.tar.xz bin/gzip.exe
+#xpm https://www.x.org/releases/individual/lib/libXpm-3.5.17.tar.xz nothing

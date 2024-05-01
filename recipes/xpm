@@ -1,0 +1,4 @@
+#!/bin/bash
+./configure --host="$TRIPLE" --prefix="$PREFIX" --disable-static --with-pic
+gmake "-j$JOBS"
+gmake install
