@@ -1,6 +1,25 @@
 build system for cross compiling gnutls and gzip for emacs on windows.
 the objective is to produce the smallest possible emacs in terms of code
-size that can open org files and download packages.
+size that can open org files and download packages, so that it can fit inside
+the tiny network drive quota at uni.
+
+install a newish python3, curl, and a mingw-w64 toolchain. add dependencies in
+sources. run download.py and make. you should have gnutls, nettle and gzip
+stripped in dlls/. copy them into your emacs build's bin/ directory.
+
+on the TODO list:
+* making everything run on windows.
+so far the technique is to build this on my mac and emacs inside a windows
+virtual machine, then combine the two afterwards.
+* libXpm-nox, otherwise the toolbar buttons are in b&w.
+* libxml2
+* cutting out some of the rarely used lisp
+
+i don't use the sqlite integration as of yet. jansson and zlib fall back to
+json.el and gzip. image libraries aren't necessary as you can use emacs' support
+for GDI+. gmp is replaced with mini-gmp in gnutls and you can do the same with
+emacs. tree-sitter and native comp are non starters because you need to haul a c
+compiler around.
 
 do what the fuck you want with this software but don't ask me for shit. see
 LICENCE.
